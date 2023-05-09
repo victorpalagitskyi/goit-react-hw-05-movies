@@ -8,15 +8,6 @@ import { Reviews } from './Reviews/Reviews';
 import { Cast } from './Cast/Cast';
 
 
- 
-// const Trendings = lazy(() => import('/pages/Trending'));
-// const Movies = lazy(() => import('/pages/Movies'));
-// const MovieSpec = lazy(() => import('/pages/MovieSpec'));
-// const Cast = lazy(() => import('./Cast/Cast'));
-// const Reviews = lazy(() => import('./Reviews/Reviews'));
-
-
-
 
 export const App = () => {
   return (

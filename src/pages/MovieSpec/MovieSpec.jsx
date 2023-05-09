@@ -1,12 +1,13 @@
 import axios from "axios"
-import { baseUrl, onMovieSpec } from "components/Urls/url"
+import { baseImgURL, baseUrl, onMovieSpec } from "components/Urls"
+
 import { Suspense, useEffect, useRef, useState } from "react"
 import { Link, Outlet, useLocation, useParams } from "react-router-dom"
 
 export const MovieSpec = () => { 
     const [movieInfo, setmovieInfo] = useState('')
     const [status, setStatus] = useState('idle')
-    const { movieId } = useParams
+    const { movieId } = useParams()
     const location = useRef(useLocation().state?.from ?? '/movies')
     
 
@@ -26,20 +27,20 @@ export const MovieSpec = () => {
             <> 
                 <Link to={location.current}>
                     <button>Back</button>
-                  <p>Some thing wrong</p>  
                 </Link>
+                <p>Some thing wrong</p>  
             </>     
         )
     if (status === 'pending') { 
         return (
             <> 
                 <Link to={location.current}>
-                    <button>Back</button>
+                    <button> {`<`} Back</button>
                 </Link>
                 <>
                     <img
                         width={200}
-                        src={`${baseUrl}${movieInfo.data.poster_path}`}
+                        src={`${baseImgURL}${movieInfo.data.poster_path}`}
                         alt='poster'
                     />
                     <>
@@ -58,7 +59,7 @@ export const MovieSpec = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to='review' movieId={movieId}>
+                            <Link to='reviews' movieId={movieId}>
                                 Reviews 
                             </Link>
                         </li>

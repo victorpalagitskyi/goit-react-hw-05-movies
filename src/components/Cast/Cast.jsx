@@ -1,5 +1,5 @@
 import axios from "axios"
-import { baseUrl, onURLFromCast } from "components/Urls/url"
+import { baseImgURL, baseUrl, onURLFromCast } from "components/Urls"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
@@ -18,16 +18,18 @@ export const Cast = () => {
             setStatus('error')
         }
        // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
+    }, [])
+    
+    console.log(actors)
     if (status === 'error') { 
         return <p>Some thing wrong</p>
     }
     if (status === 'pending') { 
         return (
             <ul>
-                {actors.map(({ id, profile_path, character, name }) => (
+                {actors.map(({ id, name, character, profile_path  }) => (
                     <li key={id}>
-                        <img width={100} src={`${baseUrl}${profile_path}`} alt=''/>
+                        <img width={100} src={`${baseImgURL}${profile_path}`} alt=''/>
                         <p>Character: {character}</p>
                         <p>Name: {name}</p>
                     </li>
@@ -36,5 +38,4 @@ export const Cast = () => {
         )
     }  
 }
-
  
