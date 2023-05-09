@@ -1,5 +1,5 @@
 import axios from "axios"
-import { baseUrl, onURLfromReviews } from "components/url"
+import { baseUrl, onURLfromReviews } from "components/Urls/url"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 

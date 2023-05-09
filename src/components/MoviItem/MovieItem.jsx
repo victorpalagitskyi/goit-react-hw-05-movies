@@ -1,9 +1,9 @@
 import axios from "axios"
-import { onMovieItems } from "components/url"
+import { onMovieItems } from "components/Urls"
 import { useEffect, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
-export const MovieItem = (searchQuery) => { 
+export const MovieItem = ({searchQuery}) => { 
     const [movies, setMovies] = useState([])
     const [status, setStatus] = useState('idle')
     const location = useLocation()
@@ -11,7 +11,7 @@ export const MovieItem = (searchQuery) => {
     useEffect(() => {
         try {
             axios.get(`${onMovieItems}${searchQuery}`).then(res => {
-                setMovies(res.data.result)
+                setMovies(res.data.results)
                 setStatus('pending')
             })
         } catch {
@@ -19,19 +19,28 @@ export const MovieItem = (searchQuery) => {
                 setStatus('error')
             }
         }   
-
-    , [searchQuery])
-    if (status === 'pending') { 
+        , [searchQuery])
+    // try {
+    //   axios.get(`${URLFromMovieItems}${searchQuery}`).then(res => {
+    //     setMovies(res.data.results);
+    //     setStatus('pending');
+    //   });
+    
+    
+    if (status === 'error') { 
+        return
+    }
+    if (status === 'pending') {
         return movies.length === 0 ? (
             <p>Sorry ........ no Movies</p>
         ) : (
                 <ul>
-                    {movies.map(movie => 
+                    {movies.map(movie => (
                         <li key={movie.id}>
                             <Link to={`${movie.id}`} state={{ from: location }}>
                                 {movie.title}
                             </Link>
-                        </li>
+                        </li>)
                     )}
                 </ul>
         )

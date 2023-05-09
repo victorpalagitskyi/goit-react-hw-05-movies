@@ -1,13 +1,13 @@
 import { Suspense } from "react";
-import { Link, Outlet } from "react-router-dom";
-// import styled from "styled-components";
-
+import {   Link, Outlet } from "react-router-dom";
+// import styled from 'styled-components';
 
 // const StyledLink = styled(NavLink)`
-// color:black
-// &.active{
-//     color:red
-// }
+//   color: black;
+
+//   &.active {
+//     color: orange;
+//   }
 // `;
 
 export const SharedLayout = () => { 
@@ -16,7 +16,7 @@ export const SharedLayout = () => {
             <nav>
                 <ul>
                     <li>
-                      <Link to='/' end>Home</Link>  
+                      <Link to='/'>Home</Link>  
                     </li>
                     <li>
                      <Link to='movies'> Movies </Link>

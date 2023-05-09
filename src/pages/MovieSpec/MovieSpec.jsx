@@ -1,5 +1,5 @@
 import axios from "axios"
-import { baseUrl, onMovieSpec } from "components/url"
+import { baseUrl, onMovieSpec } from "components/Urls/url"
 import { Suspense, useEffect, useRef, useState } from "react"
 import { Link, Outlet, useLocation, useParams } from "react-router-dom"
 

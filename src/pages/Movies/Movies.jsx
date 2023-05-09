@@ -1,15 +1,16 @@
-import { MovieItem } from "components/MovieItem"
+import { MovieItem } from "components/MoviItem/MovieItem"
 import { Suspense, useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 
 export const Movies = () => {
     const [searchMovie, setSearchMovie] = useState('')
     const [searchParams, setsearchParams] = useSearchParams()
-    const movieName = searchParams.get('name')
+     const movieName = searchParams.get('name') ?? '';
     
     useEffect(() => {
-        if (movieName === '') 
+        if (movieName === '') {
             return
+        }
         setSearchMovie(movieName)   
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

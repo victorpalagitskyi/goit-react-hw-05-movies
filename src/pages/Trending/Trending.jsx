@@ -1,5 +1,5 @@
 const { default: axios} = require("axios")
-const { onTrendings } = require("components/url")
+const { onTrendings } = require("components/Urls/url")
 const { useState, useEffect } = require("react")
 const { Link, useLocation } = require("react-router-dom")
 
