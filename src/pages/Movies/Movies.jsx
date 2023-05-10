@@ -3,7 +3,7 @@ import { MovieItem } from "components/MoviItem/MovieItem"
 import { Suspense, useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom"
 
-export const Movies = () => {
+const Movies = () => {
     const [searchMovie, setSearchMovie] = useState('')
     const [searchParams, setSearchParams] = useSearchParams()
      const movieName = searchParams.get('name')
@@ -36,3 +36,4 @@ export const Movies = () => {
     
 }
 
+export default Movies

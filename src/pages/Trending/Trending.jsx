@@ -6,7 +6,7 @@ import { Link, useLocation } from "react-router-dom"
 
 
 
-export const Trendings = () => { 
+const Trendings = () => { 
     const [movieList, setMovieList] = useState([])
     const location = useLocation()
 
@@ -36,3 +36,5 @@ export const Trendings = () => {
     )
      
 }
+
+export default Trendings

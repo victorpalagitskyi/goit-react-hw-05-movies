@@ -5,6 +5,7 @@ import { SharedLayout } from './SharedLayout/SharedLayout';
 // import { Movies } from 'pages/Movies/Movies';
 // import { MovieSpec } from 'pages/MovieSpec/MovieSpec';
 // import { Reviews } from './Reviews/Reviews';
+// import { Cast } from './Cast/Cast';
 
 const Trendings = lazy(() => import('pages/Trending/Trending'));
 const Movies = lazy(() => import('pages/Movies/Movies'));

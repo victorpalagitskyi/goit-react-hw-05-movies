@@ -4,7 +4,7 @@ import { baseImgURL, baseUrl, onMovieSpec } from "components/Urls"
 import { Suspense, useEffect, useRef, useState } from "react"
 import { Link, Outlet, useLocation, useParams } from "react-router-dom"
 
-export const MovieSpec = () => { 
+const MovieSpec = () => { 
     const [movieInfo, setmovieInfo] = useState('')
     const [status, setStatus] = useState('idle')
     const { movieId } = useParams()
@@ -73,3 +73,5 @@ export const MovieSpec = () => {
         )
     }
 }
+
+export default MovieSpec

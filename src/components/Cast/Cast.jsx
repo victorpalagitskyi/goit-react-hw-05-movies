@@ -3,7 +3,7 @@ import { baseImgURL, baseUrl, onURLFromCast } from "components/Urls"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-export const Cast = () => { 
+const Cast = () => { 
     const [actors, setActors] = useState([])
     const [status, setStatus] = useState('idle')
     const {movieId} = useParams()
@@ -20,7 +20,6 @@ export const Cast = () => {
        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
-    console.log(actors)
     if (status === 'error') { 
         return <p>Some thing wrong</p>
     }
@@ -39,3 +38,4 @@ export const Cast = () => {
     }  
 }
  
+export default Cast
