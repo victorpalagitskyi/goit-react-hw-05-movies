@@ -24,6 +24,7 @@ export const App = () => {
             <Route path="cast" element={<Cast />} />
           </Route>
         </Route>
+        <Route path="*" element={<SharedLayout />} />
       </Routes>
     </>
   );
